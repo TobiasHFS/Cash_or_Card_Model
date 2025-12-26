@@ -1,6 +1,6 @@
 [← Back to Project Overview](README.md)
 
-# Mathematical Specification: Berlin Equilibrium Toy Model (2025)
+# Mathematical Specification: Cash or Card Equilibrium Model (2025)
 
 ## 0. Conventions
 
@@ -110,7 +110,12 @@ $$ W_t(Q_t, u) = E[S(u)] + \frac{Q_t E[S^2(u)]}{2(1-\rho_t(Q_t, u))} $$
 
 **1. Addressable Market:**
 
-$$ \Lambda_{a,t}(a) = \begin{cases} \Lambda_t(1-\phi) & \text{if } a=0 \\ \Lambda_t & \text{if } a=1 \end{cases} $$
+$$ 
+\Lambda_{a,t}(a) = \begin{cases} 
+\Lambda_t(1-\phi) & \text{if } a=0 \\ 
+\Lambda_t & \text{if } a=1 
+\end{cases} 
+$$
 
 **2. Willing-to-Join Demand:**
 
@@ -194,13 +199,23 @@ $$ G(a,\alpha) = \max \left\{ 0, \; Q_{implied}^{day} - Q_{decl}^{day}(a,\alpha)
 
 ### 3. Audit Probability ($\pi_A$)
 
-$$ \pi_A(a) = \begin{cases} \pi_{cash} & a=0 \\ \pi_{card} & a=1 \end{cases} $$
+$$ 
+\pi_A(a) = \begin{cases} 
+\pi_{cash} & \text{if } a=0 \\ 
+\pi_{card} & \text{if } a=1 
+\end{cases} 
+$$
 
 *(Typically $\pi_{card} \gg \pi_{cash}$)*
 
 ### 4. Detection Probability ($d$)
 
-$$ d(a,\alpha) = \begin{cases} d_{cash} & a=0 \\ 1 - \exp(-\kappa G(a,\alpha)) & a=1 \end{cases} $$
+$$ 
+d(a,\alpha) = \begin{cases} 
+d_{cash} & \text{if } a=0 \\ 
+1 - \exp(-\kappa G(a,\alpha)) & \text{if } a=1 
+\end{cases} 
+$$
 
 ### 5. Expected Penalty
 
